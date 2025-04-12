@@ -14,36 +14,47 @@
             <li><a href="../contact/index.html">Contact</a></li>
             <li><a href="https://github.com/VedVar43789" target="_blank">GitHub</a></li>
             <li><a href="../resume/index.html">Resume</a></li>
-
         </ul>
     </nav>
     <h1>Projects</h1>
-    <p>Welcome to my projects page. Here you can find my latest work.</p>
-
-    <section>
-        <h2>Projects</h2>
+    <div class="projects">
         <article>
-            <h3>SAR Image Classification</h3>
-            <ul>
-                <li> Conducted research and development under the guidance of Dr. Hanumant Singh Shekhawat and Dr. Gaurav Trivedi, gaining hands-on experience in deep learning, image processing, and performance evaluation using TensorFlow and Keras.</li>
-
-                <li> Engineered a deep learning model using Convolutional Neural Networks (CNN) to classify SAR images into four land cover categories. Applied speckle filtering techniques like Lee and Gamma MAP to reduce noise and improve image clarity.</li>
-                    
-                <li> Integrated ResNet50 to enhance the model’s performance, focusing on optimizing runtime, memory usage, and overall classification accuracy through advanced architecture and data augmentation techniques.</li>
-            </ul>
+            <h2>Synthetic Aperture Radar (SAR) Image Classification</h2>
+            <img src="../assets/images/cnn.png" alt="SAR Image Classification Screenshot">
+            <p>Developed a CNN-based SAR image classification model with speckle filtering (Lee, Gamma MAP), optimized with ResNet50 for efficiency and accuracy using TensorFlow and Keras.</p>
         </article>
-
         <article>
-            <h3>Triton Quantitative Trading</h3>
-            <ul>
-                <li>  Built a Monte Carlo simulation model to predict stock price movements by generating probabilistic scenarios.</li>
-
-                <li> Optimized model parameters to accurately reflect market volatility and improve forecast reliability.</li>
-                    
-                <li> Applied stochastic processes, quantitative finance principles, and historical data analysis to enhance prediction accuracy.</li>
-            </ul>
+            <h2>Watts the Problem? - Power Outage Analysis</h2>
+            <img src="../assets/images/pipeline.png" alt="Power Outage Analysis">
+            <p>Built an end-to-end machine learning pipeline using Scikit-learn to predict power outages, optimized via GridSearchCV and addressed class imbalance with weighting techniques. Achieved 74.3% cross-validation accuracy.</p>
         </article>
-    </section>
-    
+        <article>
+            <h2>Monte Carlo Stock Price Predictor</h2>
+            <img src="../assets/images/monte.png" alt="Monte Carlo Stock Price Predictor">
+            <p>Created a Streamlit web app that simulates stock price paths using Brownian motion and log-normal distributions, with real-time data from Yahoo Finance and interactive confidence interval visualizations.</p>
+        </article>
+        <article>
+            <h2>Dino Map (UCSD DataHacks)</h2>
+            <img src="../assets/images/dino.png" alt="Dino Map">
+            <p>Built a CNN model to predict which country a dinosaur likely originated from, based on its image. The app displayed results on an interactive world map.</p>
+        </article>
+        <article>
+            <h2>Advanced Image Processing & KNN Classifier</h2>
+            <img src="../assets/images/knn.png" alt="KNN Classifier">
+            <p>Created an image processing suite (negation, rotation, blur) and implemented a KNN-based classification system using Python, PIL, and NumPy.</p>
+        </article>
+        <article>
+            <h2>Song Recommender</h2>
+            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+            <p>Engineered a recommender that finds similar songs based on acoustic and lyrical properties. Implemented a phrase search tool across artist discographies.</p>
+        </article>
+        <article>
+            <h2>Library Management System</h2>
+            <img src="../assets/images/library.png" alt="Library Management System">
+            <p>Developed a Python-Tkinter-based Library Management System with SQL integration to handle book issue records at Delhi Public School Indirapuram.</p>
+        </article>
+    </div>
+
+
 </body>
 </html>
