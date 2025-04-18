@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <nav>
+    <!-- <nav>
         <ul>
 
             <li><a href="../index.html">Home</a></li>
@@ -17,26 +17,22 @@
             <li><a href="../resume/index.html">Resume</a></li>
             
         </ul>
-    </nav>
+    </nav> -->
     <h1>Contact</h1>
-    <form action="mailto:vvardhaan@ucsd.edu" method="GET" enctype="text/plain">
-        <label>
-          Email:
-          <input type="email" name="email">
-        </label>
-      
-        <label>
-          Subject:
-          <input name="subject">
-        </label>
-      
-        <label>
-          Message:
-          <textarea name="body"></textarea>
-        </label>
-      
-        <button>Submit</button>
-      </form>
+    <form action="mailto:vvardhaan@ucsd.edu" method="GET">
+      <label>
+        Subject:
+        <input name="subject" required>
+      </label>
+      <label>
+        Message:
+        <textarea name="body" required></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
+    
+      <script type="module" src="../global.js"></script>
+
       
 </body>
 </html>

@@ -1,8 +1,10 @@
 /* ====== Global styles and color theme ====== */
 html {
-  --color-accent: oklch(65% 0.4 220); /* You can change this to anything you like */
+  --color-accent: oklch(65% 0.4 220); /* Your main accent color */
   accent-color: var(--color-accent);
-  
+  color-scheme: light dark;
+  background-color: canvas;
+  color: canvastext;
 }
 
 body {
@@ -18,7 +20,8 @@ nav {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  --border-color: oklch(50% 10% 200 / 40%);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav ul,
@@ -36,24 +39,25 @@ nav a {
 
 /* Current page */
 nav a.current {
-  border-bottom: 0.4em solid oklch(90% 3% 200);
+  border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
 }
 
-/* Hover effect using accent color */
+/* Hover effect with color-mix for better dark mode adaptation */
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
-  padding-bottom: 0.1em; /* keep consistent with current link */
-  background-color: oklch(from var(--color-accent) 95% 5% h)
+  padding-bottom: 0.1em;
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 input,
 textarea,
-button {
+button,
+select {
   font: inherit;
 }
 
-/* Make labels and form controls stack vertically */
+/* ====== Form layout ====== */
 form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -91,19 +95,14 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  width: 108%
+  width: 108%;
 }
 
 button:hover {
   background-color: #ddd;
 }
 
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  gap: 1rem;
-}
-
+/* ====== Projects section styling ====== */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -120,6 +119,22 @@ button:hover {
   margin: 0;
 }
 
+.projects article > * + * {
+  margin-top: 0.5rem;
+}
+
+.projects img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+article {
+  margin-bottom: 50px;
+}
+
+/* ====== Headings ====== */
 h1 {
   font-size: 400%;
 }
@@ -129,20 +144,25 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
-.projects article > * + * {
-  margin-top: 0.5rem;
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
 }
 
-article {
-  margin-bottom: 50px; /* Adjust the value as needed */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
 }
 
-.projects img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px; /* optional: gives images rounded corners */
+input,
+textarea,
+button,
+select {
+  font: inherit;
 }
-
-
-
