@@ -1,6 +1,5 @@
-/* ====== Global styles and color theme ====== */
 html {
-  --color-accent: oklch(65% 0.4 220); /* Your main accent color */
+  --color-accent: oklch(65% 0.4 220); 
   accent-color: var(--color-accent);
   color-scheme: light dark;
   background-color: canvas;
@@ -15,7 +14,6 @@ body {
   padding: 1rem;
 }
 
-/* ====== Navigation styling ====== */
 nav {
   display: flex;
   gap: 1rem;
@@ -37,13 +35,11 @@ nav a {
   padding: 0.5em;
 }
 
-/* Current page */
 nav a.current {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
 }
 
-/* Hover effect with color-mix for better dark mode adaptation */
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
@@ -57,7 +53,6 @@ select {
   font: inherit;
 }
 
-/* ====== Form layout ====== */
 form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -102,7 +97,6 @@ button:hover {
   background-color: #ddd;
 }
 
-/* ====== Projects section styling ====== */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -134,7 +128,6 @@ article {
   margin-bottom: 50px;
 }
 
-/* ====== Headings ====== */
 h1 {
   font-size: 400%;
 }
