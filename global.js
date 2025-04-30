@@ -126,6 +126,11 @@ export async function fetchJSON(url) {
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   containerElement.innerHTML = '';
 
+  const countDisplay = document.querySelector('.projects-title');
+  if (countDisplay) {
+    countDisplay.textContent = projects.length;
+  }
+  
   for (const project of projects) {
     const article = document.createElement('article');
 
