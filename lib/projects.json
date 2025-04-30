@@ -14,7 +14,7 @@
     {
       "title": "MarketScope: Intelligent Stock Forecasting App",
       "year": "2024",
-      "image": "../assets/images/monte.png",
+      "image": "../assets/images/market.png",
       "description": "Built a stock price simulator with Streamlit and Yahoo Finance using Brownian motion and log-normal distribution."
     },
     {
