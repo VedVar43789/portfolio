@@ -1,5 +1,5 @@
 html {
-  --color-accent: oklch(65% 0.4 220); 
+  --color-accent: oklch(65% 0.4 220);
   accent-color: var(--color-accent);
   color-scheme: light dark;
   background-color: canvas;
@@ -132,7 +132,12 @@ h1 {
   font-size: 400%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.1;
   text-wrap: balance;
 }
@@ -273,4 +278,3 @@ path {
 .selected:is(path) {
   fill: var(--color);
 }
-

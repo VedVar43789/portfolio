@@ -15,53 +15,52 @@
 
 console.log("IT'S ALIVE!");
 
-
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
-
 
 let pages = [
   { url: "", title: "Home" },
   { url: "projects/", title: "Projects" },
   { url: "contact/", title: "Contact" },
   { url: "resume/", title: "Resume" },
-  { url: "https://github.com/VedVar43789", title: "GitHub" }
+  { url: "meta/", title: "Meta" },
+  { url: "https://github.com/VedVar43789", title: "GitHub" },
 ];
 
 const BASE_PATH =
   location.hostname === "localhost" || location.hostname === "127.0.0.1"
     ? "/"
-    : "/portfolio/"; // 
+    : "/portfolio/"; //
 
 let nav = document.createElement("nav");
 document.body.prepend(nav);
 
 for (let p of pages) {
-    let url = p.url;
-    let title = p.title;
-  
-    url = !url.startsWith("http") ? BASE_PATH + url : url;
-  
-    let a = document.createElement("a");
-    a.href = url;
-    a.textContent = title;
-  
-    a.classList.toggle(
-      "current",
-      a.host === location.host && a.pathname === location.pathname
-    );
-  
-    if (a.host !== location.host) {
-      a.target = "_blank";
-    }
-  
-    nav.append(a);
+  let url = p.url;
+  let title = p.title;
+
+  url = !url.startsWith("http") ? BASE_PATH + url : url;
+
+  let a = document.createElement("a");
+  a.href = url;
+  a.textContent = title;
+
+  a.classList.toggle(
+    "current",
+    a.host === location.host && a.pathname === location.pathname,
+  );
+
+  if (a.host !== location.host) {
+    a.target = "_blank";
   }
 
-  document.body.insertAdjacentHTML(
-    'afterbegin',
-    `
+  nav.append(a);
+}
+
+document.body.insertAdjacentHTML(
+  "afterbegin",
+  `
     <label class="color-scheme">
       Theme:
       <select id="theme-select">
@@ -70,10 +69,10 @@ for (let p of pages) {
         <option value="dark">Dark</option>
       </select>
     </label>
-    `
-  );
+    `,
+);
 
-  const select = document.querySelector("#theme-select");
+const select = document.querySelector("#theme-select");
 
 if ("colorScheme" in localStorage) {
   const savedScheme = localStorage.colorScheme;
@@ -91,7 +90,7 @@ select.addEventListener("input", function (event) {
 const form = document.querySelector("form");
 
 form?.addEventListener("submit", function (event) {
-  event.preventDefault(); 
+  event.preventDefault();
 
   const data = new FormData(form);
   let url = form.action + "?";
@@ -117,22 +116,25 @@ export async function fetchJSON(url) {
 
     const data = await response.json();
     return data;
-
   } catch (error) {
-    console.error('Error fetching or parsing JSON data:', error);
+    console.error("Error fetching or parsing JSON data:", error);
   }
 }
 
-export function renderProjects(projects, containerElement, headingLevel = 'h2') {
-  containerElement.innerHTML = '';
+export function renderProjects(
+  projects,
+  containerElement,
+  headingLevel = "h2",
+) {
+  containerElement.innerHTML = "";
 
-  const countDisplay = document.querySelector('.projects-title');
+  const countDisplay = document.querySelector(".projects-title");
   if (countDisplay) {
     countDisplay.textContent = projects.length;
   }
-  
+
   for (const project of projects) {
-    const article = document.createElement('article');
+    const article = document.createElement("article");
 
     article.innerHTML = `
     <${headingLevel}>${project.title}</${headingLevel}>
@@ -150,6 +152,3 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 export async function fetchGitHubData() {
   return fetchJSON(`https://api.github.com/users/VedVar43789`);
 }
-
-
-

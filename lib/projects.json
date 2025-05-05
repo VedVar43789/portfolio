@@ -1,75 +1,74 @@
 [
-    {
-      "title": "SAR Image Classification",
-      "year": "2024",
-      "image": "../assets/images/cnn.png",
-      "description": "Developed a CNN-based SAR image classification model using TensorFlow and speckle filters like Lee and Gamma MAP."
-    },
-    {
-      "title": "Power Outage Prediction",
-      "year": "2025",
-      "image": "../assets/images/pipeline.png",
-      "description": "Built an end-to-end ML pipeline for predicting outages using Random Forest and GridSearchCV."
-    },
-    {
-      "title": "MarketScope: Intelligent Stock Forecasting App",
-      "year": "2024",
-      "image": "../assets/images/market.png",
-      "description": "Built a stock price simulator with Streamlit and Yahoo Finance using Brownian motion and log-normal distribution."
-    },
-    {
-      "title": "Dino Map (UCSD DataHacks)",
-      "year": "2024",
-      "image": "../assets/images/dino.png",
-      "description": "Created a CNN to map dinosaur images to country locations with interactive visualization."
-    },
-    {
-      "title": "Advanced Image Processing",
-      "year": "2023",
-      "image": "../assets/images/knn.png",
-      "description": "Implemented grayscale, blur, rotate, and KNN-based image classification using Python and NumPy."
-    },
-    {
-      "title": "Song Recommender",
-      "year": "2023",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Built a tool to suggest similar songs using audio features and search phrases across artist discographies."
-    },
-    {
-      "title": "Library Management System",
-      "year": "2022",
-      "image": "../assets/images/library.png",
-      "description": "Created a Python-Tkinter app connected to MySQL to track book lending for a school."
-    },
-    {
-      "title": "Placeholder Project A",
-      "year": "2021",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "This is a placeholder project used to meet the 12-project requirement. Real project coming soon."
-    },
-    {
-      "title": "Placeholder Project B",
-      "year": "2022",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "This is another placeholder for testing purposes. Description to be updated."
-    },
-    {
-      "title": "Placeholder Project C",
-      "year": "2023",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Test entry for future coursework and visualization testing."
-    },
-    {
-      "title": "Placeholder Project D",
-      "year": "2024",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Temporary placeholder for a collaborative UI/UX redesign project."
-    },
-    {
-      "title": "Placeholder Project E",
-      "year": "2025",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Final placeholder project to ensure variety in year-based data visualization."
-    }
-  ]
-  
+  {
+    "title": "SAR Image Classification",
+    "year": "2024",
+    "image": "../assets/images/cnn.png",
+    "description": "Developed a CNN-based SAR image classification model using TensorFlow and speckle filters like Lee and Gamma MAP."
+  },
+  {
+    "title": "Power Outage Prediction",
+    "year": "2025",
+    "image": "../assets/images/pipeline.png",
+    "description": "Built an end-to-end ML pipeline for predicting outages using Random Forest and GridSearchCV."
+  },
+  {
+    "title": "MarketScope: Intelligent Stock Forecasting App",
+    "year": "2024",
+    "image": "../assets/images/market.png",
+    "description": "Built a stock price simulator with Streamlit and Yahoo Finance using Brownian motion and log-normal distribution."
+  },
+  {
+    "title": "Dino Map (UCSD DataHacks)",
+    "year": "2024",
+    "image": "../assets/images/dino.png",
+    "description": "Created a CNN to map dinosaur images to country locations with interactive visualization."
+  },
+  {
+    "title": "Advanced Image Processing",
+    "year": "2023",
+    "image": "../assets/images/knn.png",
+    "description": "Implemented grayscale, blur, rotate, and KNN-based image classification using Python and NumPy."
+  },
+  {
+    "title": "Song Recommender",
+    "year": "2023",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Built a tool to suggest similar songs using audio features and search phrases across artist discographies."
+  },
+  {
+    "title": "Library Management System",
+    "year": "2022",
+    "image": "../assets/images/library.png",
+    "description": "Created a Python-Tkinter app connected to MySQL to track book lending for a school."
+  },
+  {
+    "title": "Placeholder Project A",
+    "year": "2021",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "This is a placeholder project used to meet the 12-project requirement. Real project coming soon."
+  },
+  {
+    "title": "Placeholder Project B",
+    "year": "2022",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "This is another placeholder for testing purposes. Description to be updated."
+  },
+  {
+    "title": "Placeholder Project C",
+    "year": "2023",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Test entry for future coursework and visualization testing."
+  },
+  {
+    "title": "Placeholder Project D",
+    "year": "2024",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Temporary placeholder for a collaborative UI/UX redesign project."
+  },
+  {
+    "title": "Placeholder Project E",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Final placeholder project to ensure variety in year-based data visualization."
+  }
+]
