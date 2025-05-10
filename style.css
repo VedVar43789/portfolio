@@ -278,3 +278,37 @@ path {
 .selected:is(path) {
   fill: var(--color);
 }
+
+/* .gridlines line {
+  stroke: #ccc;
+  stroke-opacity: 0.4;
+  shape-rendering: crispEdges;
+}
+
+.gridlines path {
+  display: none;
+}
+
+.stats {
+  font-family: sans-serif;
+  margin: 1em 0;
+}
+
+.stats dt {
+  font-weight: bold;
+}
+
+.stats dd {
+  margin: 0 0 1em 0;
+} */
+
+.gridlines line {
+  stroke: red; /* change to red for visibility */
+  stroke-width: 1;
+  stroke-opacity: 1;
+  shape-rendering: crispEdges;
+}
+
+.gridlines path {
+  display: none;
+}
