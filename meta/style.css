@@ -271,13 +271,7 @@
   
   /* Scatterplot chart styles */
   #chart svg {
-    background: linear-gradient(
-      to top,
-      color-mix(in oklch, canvas 40%, oklch(35% 0.1 250)) 0%,     /* Night (bottom) - blue tint */
-      color-mix(in oklch, canvas 45%, oklch(80% 0.05 240)) 30%,   /* Morning - lighter blue */
-      color-mix(in oklch, canvas 45%, oklch(65% 0.1 245)) 70%,    /* Afternoon - medium blue */
-      color-mix(in oklch, canvas 40%, oklch(35% 0.1 250)) 100%    /* Night (top) - blue tint */
-    );
+    background-color: color-mix(in oklch, var(--color-accent) 10%, oklch(50% 0.12 240));
     border-radius: 10px;
     box-shadow: 0 2px 6px color-mix(in oklch, var(--color-accent), canvas 90%);
     transition: background 0.3s ease;
