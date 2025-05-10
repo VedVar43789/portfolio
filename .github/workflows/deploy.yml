@@ -1,0 +1,54 @@
+name: Vedant Deployment
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  checkout:
+    name: Checkout
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+          
+  run-elocuent:
+    name: Run Elocuent
+    needs: checkout
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run elocuent analysis
+        run: npx elocuent -d . -o meta/loc.csv
+      
+  commit-and-push:
+    name: Commit and Push
+    needs: run-elocuent
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Configure Git
+        run: |
+          git config --local user.email "vvardhaan@gmail.com"
+          git config --local user.name "VedVar43789"
+      - name: Create meta directory if needed
+        run: mkdir -p meta
+      - name: Update from remote
+        run: git pull
+      - name: Stage changes
+        run: git add -f meta/loc.csv
+      - name: Commit changes
+        run: git commit -m "Update code statistics" || echo "No changes to commit"
+      - name: Push changes
+        run: git push
