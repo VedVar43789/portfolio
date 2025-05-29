@@ -165,10 +165,10 @@ label.color-scheme {
 /* Stats-focused styling */
 #stats {
   margin-top: 2rem;
-  padding: 1rem;
-  border-radius: 6px;
-  background-color: var(--stats-bg);
-  transition: background-color 0.3s;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--stats-bg);
+  box-shadow: 0 4px 20px color-mix(in oklch, canvas, transparent 95%);
 }
 
 .stats {
@@ -177,7 +177,11 @@ label.color-scheme {
 
 .stats dl {
   display: grid;
-  gap: 1.5rem;
+  grid-template-areas:
+    "loc commits files"
+    "length line depth"
+    "time time time";
+  gap: 1.5rem 2rem;
 }
 
 .stats dt {
@@ -196,21 +200,15 @@ label.color-scheme {
   font-weight: 600;
   color: var(--color-accent);
   line-height: 1;
-  margin-bottom: 1rem;
-  transition: color 0.3s;
+  margin: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Layout for stats */
-.stats dl {
-  display: grid;
-  grid-template-areas:
-    "loc commits"
-    "files length"
-    "line depth"
-    "time time";
-  gap: 1.5rem 2rem;
+.stats dd:hover {
+  transform: scale(1.05);
 }
 
+/* Stats grid areas */
 .stats dt:nth-of-type(1), .stats dd:nth-of-type(1) { grid-area: loc; }
 .stats dt:nth-of-type(2), .stats dd:nth-of-type(2) { grid-area: commits; }
 .stats dt:nth-of-type(3), .stats dd:nth-of-type(3) { grid-area: files; }
@@ -233,6 +231,7 @@ label.color-scheme {
   font-size: 2rem;
 }
 
+/* Responsive stats layout */
 @media (max-width: 768px) {
   .stats dl {
     grid-template-areas:
@@ -241,21 +240,12 @@ label.color-scheme {
       "files length"
       "line depth"
       "time time";
+    gap: 1.25rem;
   }
   
   .stats dd {
     font-size: 2rem;
   }
-  
-  #profile-stats dl {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-  }
-  
-  #profile-stats dd {
-    font-size: 1.75rem;
-  }
-
 }
 
 @media (min-width: 992px) {
@@ -517,4 +507,239 @@ circle.selected {
   left: 0;
   bottom: auto;
   height: 50vh;
+}
+
+/* Base chart styling */
+#chart {
+  transition: transform 0.3s ease;
+}
+
+#chart:hover {
+  transform: scale(1.01);
+}
+
+#chart circle {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+}
+
+#chart circle:hover {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+  transform: translateY(-2px);
+}
+
+/* Scrollytelling layout */
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+  margin: -1rem;
+}
+
+#scatter-story {
+  position: relative;
+  padding-right: 1rem;
+  flex: 1;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 1rem;
+  height: calc(100vh - 2rem);
+  padding: 1rem;
+  background: color-mix(in oklch, canvas, transparent 98%);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px color-mix(in oklch, canvas, transparent 95%);
+  transition: transform 0.3s ease;
+  flex: 1;
+}
+
+#scatter-plot:hover {
+  transform: translateY(-2px);
+}
+
+/* Step styling */
+.step {
+  position: relative;
+  padding: 1.5rem;
+  margin-bottom: 4rem;
+  background: color-mix(in oklch, canvas, transparent 97%);
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklch, canvastext, transparent 90%);
+  box-shadow: 0 2px 8px color-mix(in oklch, canvas, transparent 95%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step:hover {
+  background: color-mix(in oklch, canvas, transparent 95%);
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px color-mix(in oklch, canvas, transparent 90%);
+}
+
+.step::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  width: 1rem;
+  height: 1rem;
+  background: var(--color-accent);
+  border-radius: 50%;
+  transform: translateY(-50%) scale(0);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.step:hover::before {
+  transform: translateY(-50%) scale(1);
+  opacity: 0.6;
+}
+
+.step a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.step a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* File visualization */
+#files {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: color-mix(in oklch, canvas, transparent 97%);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px color-mix(in oklch, canvas, transparent 95%);
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+#files > div {
+  position: relative;
+  padding: 0.8rem;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+#files > div:hover {
+  background: color-mix(in oklch, canvas, transparent 95%);
+  transform: translateX(5px);
+}
+
+#files > div::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklch, canvastext, transparent 85%),
+    transparent
+  );
+}
+
+#files dt {
+  grid-column: 1;
+}
+
+#files dt code {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-size: 0.9em;
+  color: var(--color-accent);
+}
+
+#files dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.2em;
+  padding: 0.8em 0;
+  margin-left: 0;
+}
+
+#files small {
+  display: block;
+  font-size: 0.85em;
+  opacity: 0.7;
+  margin-top: 0.3em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color);
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.loc:hover {
+  transform: scale(1.8) translateY(-2px);
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2));
+  z-index: 2;
+}
+
+/* Tooltip styling */
+#commit-tooltip {
+  position: absolute;
+  background: color-mix(in oklch, canvas, transparent 95%);
+  backdrop-filter: blur(8px);
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 
+    0 4px 20px color-mix(in oklch, canvas, transparent 90%),
+    0 0 0 1px color-mix(in oklch, canvastext, transparent 90%);
+  max-width: 320px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  pointer-events: none;
+}
+
+#commit-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+#commit-tooltip a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#commit-tooltip a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Selection styling */
+.selected {
+  --color: var(--color-accent);
+  filter: drop-shadow(0 0 8px color-mix(in oklch, var(--color-accent), transparent 70%));
+}
+
+/* Grid lines */
+.gridlines line {
+  stroke: #ccc;
+  stroke-opacity: 0.4;
+  shape-rendering: crispEdges;
+}
+
+.gridlines path {
+  display: none;
 }

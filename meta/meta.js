@@ -1,4 +1,5 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
+import scrollama from 'https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm';
 
 // Global variables for scales and data
 let xScale, yScale;
@@ -495,3 +496,30 @@ d3.select('#scatter-story')
     Then I looked over all I had made, and I saw that it was very good.`
   )
   .style('padding-bottom', '3em');
+
+function onStepEnter(response) {
+  const commit = response.element.__data__;
+  const commitDate = commit.datetime;
+  
+  // Update the visualization to show commits up to this date
+  commitMaxTime = commitDate;
+  filteredCommits = commits.filter((c) => c.datetime <= commitMaxTime);
+  const filteredData = data.filter(d => d.datetime <= commitMaxTime);
+  
+  // Update visualizations
+  d3.select('#stats').selectAll('*').remove();
+  renderCommitInfo(filteredData, filteredCommits);
+  updateScatterPlot(filteredData, filteredCommits);
+  updateFileDisplay(filteredCommits);
+}
+
+const scroller = scrollama();
+scroller
+  .setup({
+    container: '#scrolly-1',
+    step: '#scrolly-1 .step',
+  })
+  .onStepEnter(onStepEnter);
+
+// Initial state
+filteredCommits = commits;

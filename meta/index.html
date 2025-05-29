@@ -18,28 +18,21 @@
       <time id="commit-time" style="margin-left: auto;"></time>
     </div>
     <div id="scrolly-1">
-      <div id="scatter-story">Some filler text here</div>
+      <div id="scatter-story"></div>
       <div id="scatter-plot">
         <div id="chart"></div>
-        <dl id="language-breakdown" class="stats"></dl>
+        <div id="commit-tooltip" hidden>
+          <a id="commit-link"></a>
+          <time id="commit-date"></time>
+          <div id="selection-count"></div>
+          <dl id="language-breakdown"></dl>
+        </div>
         <div id="stats"></div>
-        <dl id="commit-tooltip" class="info tooltip" hidden>
-          <dt>Commit</dt>
-          <dd>
-            <a href="" id="commit-link" target="_blank"></a>
-          </dd>
-          <dt>Date</dt>
-          <dd id="commit-date"></dd>
-          <dt>Time</dt>
-          <dd id="commit-time"></dd>
-          <dt>Author</dt>
-          <dd id="commit-author"></dd>
-          <dt>Lines Changed</dt>
-          <dd id="commit-lines"></dd>
-        </dl>
       </div>
     </div>
-    <dl id="files"></dl>
+    <dl id="files">
+      <!-- Files will be dynamically added here -->
+    </dl>
     <script type="module" src="meta.js"></script>
     <script type="module" src="../global.js" type="module"></script>
 </body>
